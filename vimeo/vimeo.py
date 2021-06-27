@@ -5,7 +5,7 @@ url = "https://api.vimeo.com/oauth/authorize/client"
 
 payload = json.dumps({
   "grant_type": "client_credentials",
-  "scope": "public"
+  "scope": "public private upload"
 })
 headers = {
   'Accept': 'application/vnd.vimeo.*+json;version=3.4',
@@ -18,3 +18,26 @@ headers = {
 response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
+
+# import requests
+# import json
+
+url = "https://api.vimeo.com/me/videos"
+
+payload = json.dumps({
+  "upload": {
+    "approach": "post",
+    "size": "5000",
+    "redirect_url": "http://www.stevenpatz.net/~spatz"
+  }
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/vnd.vimeo.*+json;version=3.4',
+  'Authorization': 'Bearer 423ede4c8bdb280078f7e6a4194432fb'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+
