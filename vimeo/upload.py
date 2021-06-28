@@ -52,4 +52,4 @@ if(bytes_uploaded != file_size):
     print("Upload did not complete.\n")
     print(bytes_uploaded + " bytes uploaded.")
     #TODO Restart upload using Patch, Set Upload-Offset to what whatever is in bytes_uploaded.
-print("File was uploaded and is available here: " + "https://www.viemo.com/" + vimeo_url)
+print("File was uploaded and is available here: " + "https://www.vimeo.com" + vimeo_url)
