@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 if len(sys.argv) != 3:
-    raise ValueError('Need two arguments.')
+    raise ValueError('Need two arguments. Filename first, followed my Vimeo name')
 
 file_name = sys.argv[1]
 video_name = sys.argv[2]
