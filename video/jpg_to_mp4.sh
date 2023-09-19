@@ -23,5 +23,5 @@ if [ "$#" -lt "1" ]
         x=$(($x+1))
       done
 echo "\n"
-ffmpeg -hide_banner -v warning -stats -i "img_in_order/img%06d.jpg" -r 30 -s hd1080 -vcodec hevc_nvenc -threads 24 -pix_fmt yuv444p $date_$1.mp4
+ffmpeg -hide_banner -v warning -stats -i "img_in_order/img%06d.jpg" -r 30 -s hd1080 -preset slow -threads 15 -pix_fmt yuv444p $date_$1.mp4
 fi
