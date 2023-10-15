@@ -52,4 +52,11 @@ if(bytes_uploaded != file_size):
     print("Upload did not complete.\n")
     print(bytes_uploaded + " bytes uploaded.")
     #TODO Restart upload using Patch, Set Upload-Offset to what whatever is in bytes_uploaded.
-print("File was uploaded and is available here: " + "https://www.vimeo.com" + vimeo_url)
+
+# We need to get the numeric part of the vimeo_url and then append that to the print below.  The path part of the url is split, not the domain part. So I had to switch the [1] to [2] to get the right thing (videos/####### where ####### is what I want.)
+done_url = vimeo_url.split('/')[2]
+print("File was uploaded and is available here: " + "https://www.vimeo.com/" + done_url)
+
+# print("If this works, remember to merge the branch.")
+# print("Done " + " " + done_url)
+# print("All: " + " " + vimeo_url) 
