@@ -4,7 +4,7 @@ x=1
 echo "Starting the chopping process.\n\n"
 for i in G*.JPG
   do 
-    switcherooctl launch convert $i -gravity South -chop 0x885 -gravity North -chop 0x70 $i
+    switcherooctl launch convert $i -gravity South -chop 0x850 $i
     [ $((x%10)) -eq 0 ] && echo -n "-"
     x=$(($x+1))
   done
