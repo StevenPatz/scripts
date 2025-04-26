@@ -4,7 +4,7 @@ for D in */;
 do 
     cd $D;
     echo "Running in $D\n";
-    mv *.txt ../ ;
+    mv *.$1 ../ ;
     echo "Switching back a dir\n";
     cd ..;
 #    count=$((count + 1));  
