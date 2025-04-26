@@ -1,1 +1,2 @@
  cp ~/scripts/video/jpg_to_mp4.sh . ; mkdir img_in_order ; sh jpg_to_mp4.sh 20230423_safeway_a
+bash copy.sh mp4 to copy all mp4s
