@@ -1,6 +1,7 @@
 #!/bin/bash
 # TODO
 x=1
+echo "AV1 Version\n"
 echo "Starting the chopping process.\n\n"
 for i in G*.JPG
   do 
@@ -24,5 +25,5 @@ if [ "$#" -lt "1" ]
       done
 echo "\n"
 #switcherooctl launch ffmpeg -hide_banner -v warning -stats -i "img_in_order/img%06d.jpg" -r 30 -s hd1080 -preset slow -threads 15 -pix_fmt yuv444p $date_$1.mp4
-ffmpeg -hide_banner -v warning -stats -i "img_in_order/img%06d.jpg" -r 30 -cpu-used 8 -row-mt 1 -usage realtime -c:v libaom-av1 -threads 15 -pix_fmt yuv420p10le $date_$1.mkv
+ffmpeg -hide_banner -v warning -stats -i "img_in_order/img%06d.jpg" -r 30 -cpu-used 8 -row-mt 1 -crf 23 -tiles 4x1 -c:v libaom-av1 -threads 15 -pix_fmt yuv420p10le $date_$1.mkv
 fi
